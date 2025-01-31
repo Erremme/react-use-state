@@ -10,7 +10,8 @@ export default function AccordionList() {
                       <AccordionComponent 
                       key={comp.id} 
                       title={comp.title} 
-                      description={comp.description}/>
+                      description={comp.description}
+                      type="open"/>
                 )
             })}
         </div>
