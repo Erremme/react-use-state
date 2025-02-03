@@ -1,21 +1,13 @@
-import { useState } from "react"
 
-export default  function AccordionComponent({ children ,title, description, type = "open"}){
 
-    const [isOpen , setIsOpen] = useState(false)
+export default  function AccordionComponent({title, description, isOpen, onAccordionToggle}){
 
-    const toggleAccordion = () => {
-        return(
-            setIsOpen(!isOpen)
-        )
-    }
 
     return(<div className="accordion">
-        <div className={`header-accordion d-flex  ${isOpen && type}`} >
-            {children}
+        <div className={`header-accordion d-flex  ${isOpen ? "open": ""}`} >
             <h1>{title}</h1>
             <div>
-            <button onClick={toggleAccordion}>{isOpen ? "-" : "+"}</button>
+            <button onClick={onAccordionToggle}>{isOpen ? "-" : "+"}</button>
             </div>
         </div>
         {isOpen && <div className="paragraf-accordion">
